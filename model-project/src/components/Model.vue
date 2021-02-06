@@ -1,10 +1,12 @@
 <template>
-    <div class="dropout" @click="closeModal()">
+    <div class="dropout">
         <div class="modal" :class="{sale: theme === 'sale', dark: theme === 'dark'}">
             <h1>modal</h1>
             <h1>{{header}}</h1>
             <p>modal content</p>
             <strong>{{text}}</strong>
+            <br>
+            <button @click.self="closeModal">close</button>
         </div>
     </div>
 </template>
@@ -24,7 +26,7 @@ export default {
 .modal{
     width: 400px;
     padding: 20px;
-    margin: 100px auto;
+    margin: 100px auto ;
     background: rgb(50, 134, 113);
     border-radius: 10px;
 }
