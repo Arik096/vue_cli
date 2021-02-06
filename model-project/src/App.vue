@@ -1,9 +1,27 @@
 <template>
   
   <h1>{{title}}</h1>
-  <button @click="toggleModal"> open modal</button>
+  <button @click="toggleModal"> open modal 1</button>
+  <button @click="toggleModal2"> open modal 2</button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme='dark' @close="toggleModal"/>
+    <Modal theme='sale' @close="toggleModal">
+      <h1>Title</h1>
+      <p>Arik Md Isthiaque</p>
+      <template v-slot:links>
+        <a href="#">sign up</a>
+        <a href="#">log in</a>
+      </template>
+      </Modal>
+  </div>
+  <div v-if="showModal2">
+    <Modal theme='drak' @close="toggleModal2">
+      <h1>Title</h1>
+      <p>Pritilata Biswas</p>
+      <template v-slot:url>
+        <a href="#">sign up</a>
+        <a href="#">log in</a>
+      </template>
+    </Modal>
   </div>
 </template>
 
@@ -20,13 +38,17 @@ export default {
       title: "my 1st app",
       header: "Signup for giveway!",
       text: "hello",
-      showModal: true
+      showModal: false,
+      showModal2: false
     }
   },
   methods: {
     toggleModal(){
       this.showModal = !this.showModal;
-    }
+    },
+    toggleModal2(){
+      this.showModal2 = !this.showModal2;
+    },
   }
 }
 </script>
@@ -46,7 +68,6 @@ h1{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #c21f1f;
-  margin-top: 60px;
-  border: 2px solid rgb(255, 252, 252);
+  margin-top: 10px;
 }
 </style>
