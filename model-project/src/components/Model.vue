@@ -1,5 +1,5 @@
 <template>
-    <div class="dropout">
+    <div class="dropout" @click="closeModal()">
         <div class="modal" :class="{sale: theme === 'sale', dark: theme === 'dark'}">
             <h1>modal</h1>
             <h1>{{header}}</h1>
@@ -12,6 +12,11 @@
 <script>
 export default {
     props: ["header", "text" , "theme"],
+    methods: {
+        closeModal(){
+            this.$emit('close');
+        }
+    }
 }
 </script>
 
@@ -25,7 +30,8 @@ export default {
 }
 .backdrop{
     top: 0;
-    position: fixed;
+    position: absolute;
+    z-index: 0;
     background: rgba(155, 67, 67, 0.5);
     width: 100%;
     height: 100%;
