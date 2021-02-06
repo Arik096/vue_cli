@@ -1,7 +1,7 @@
 <template>
   
   <h1>{{title}}</h1>
-  <Modal/>
+  <Modal :header="header" :text="text" theme='dark'/>
 </template>
 
 <script>
@@ -14,7 +14,9 @@ export default {
   },
   data() {
     return {
-      title: "my 1st app"
+      title: "my 1st app",
+      header: "Signup for giveway!",
+      text: "hello"
     }
   },
 }
@@ -34,8 +36,8 @@ h1{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #c21f1f;
   margin-top: 60px;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 252, 252);
 }
 </style>
