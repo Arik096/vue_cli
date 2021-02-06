@@ -3,7 +3,7 @@
   <h1>{{title}}</h1>
   <button @click="toggleModal"> open modal 1</button>
   <button @click="toggleModal2"> open modal 2</button>
-  <div v-if="showModal">
+  <teleport to="#modals" v-if="showModal">
     <Modal theme='sale' @close="toggleModal">
       <h1>Title</h1>
       <p>Arik Md Isthiaque</p>
@@ -12,8 +12,8 @@
         <a href="#">log in</a>
       </template>
       </Modal>
-  </div>
-  <div v-if="showModal2">
+  </teleport>
+  <teleport to="#modals" v-if="showModal2">
     <Modal theme='drak' @close="toggleModal2">
       <h1>Title</h1>
       <p>Pritilata Biswas</p>
@@ -22,7 +22,7 @@
         <a href="#">log in</a>
       </template>
     </Modal>
-  </div>
+  </teleport>
 </template>
 
 <script>
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #modals{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
