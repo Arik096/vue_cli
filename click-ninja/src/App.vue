@@ -1,17 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>CLick Ninja</h1>
+  <button @click="playNow" :disabled="isPlaying">Play</button>
+  <Block v-if="isPlaying" :delay="delay" @end="getResultTime" />
+  <Result v-if="resultTime != 0" :resultTime="resultTime" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Block from "./components/Block.vue";
+import Result from "./components/Result.vue";
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { Block, Result },
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+      resultTime: 0,
+    };
+  },
+  methods: {
+    playNow() {
+      this.isPlaying = true;
+      this.delay = 100 + Math.random() * 500;
+      this.resultTime = 0;
+    },
+    getResultTime(endTime){
+      this.resultTime = endTime;
+      this.isPlaying = false;
+    }
+  },
+};
 </script>
 
 <style>
