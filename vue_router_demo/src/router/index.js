@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Jobs from '../views/jobs/Jobs.vue'
-import JobsDetails from '../views/jobs/JobsDetails.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views/Home.vue";
+import About from "../views/About.vue";
+import Jobs from "../views/jobs/Jobs.vue";
+import JobsDetails from "../views/jobs/JobsDetails.vue";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
@@ -31,19 +31,18 @@ const routes = [
   {
     path: "/all-jobs",
     redirect: "/jobs",
-
   },
   // catch all 404 not found
   {
-    path: '/:catchAll(.*)',
+    path: "/:catchAll(.*)",
     name: "Not Found",
     component: NotFound,
-  }
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

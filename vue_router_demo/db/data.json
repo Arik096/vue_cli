@@ -1,7 +1,19 @@
 {
     "jobs": [
-                {"title": "ux", "id": 1, "slug": "lorem"},
-                {"title": "web", "id": 2, "slug": "lorem"},
-                {"title": "android", "id": 3, "slug": "lorem"}
-            ]
+        {
+            "title": "ux",
+            "id": 1,
+            "slug": "lorem"
+        },
+        {
+            "title": "web",
+            "id": 2,
+            "slug": "lorem"
+        },
+        {
+            "title": "android",
+            "id": 3,
+            "slug": "lorem"
+        }
+    ]
 }
