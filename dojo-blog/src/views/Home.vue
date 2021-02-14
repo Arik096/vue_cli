@@ -5,11 +5,17 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'Home',
-  components: {
+  setup(){
+    console.log("setup");
+  },
+  created(){
+    console.log("created");
+  },
+  mounted(){
+    console.log("mounted");
   }
 }
 </script>
