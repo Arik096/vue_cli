@@ -1,29 +1,35 @@
 <template>
   <div class="home">
     <h1>hello world</h1>
-    <p ref="p">my name is {{name}}, my age is {{age}}</p>
-    <button @click="handleclick">click me</button>
+    <p>my name is {{data1.name}}, my age is {{data1.age}}</p>
+    <button @click="handleclick1">click me</button>
+    <hr>
+    <p>my name is {{data2.name}}, my age is {{data2.age}}</p>
+    <button @click="handleclick2">click me</button>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 export default {
   name: 'Home',
   setup(){
 
-    const p = ref(null);
+    const data1 = ref({ name: 'arik', age: 25 });
+    const data2 = reactive({ name: 'puja', age: 20 });
 
-    let name = 'mario';
-    let age = 20;
 
-    const handleclick = () => {
-      console.log(p.value);
-      p.value.classList.add('test');
+
+    const handleclick1 = () => {
+      data1.age.value = data1.value.age++;
+    }
+    
+    const handleclick2 = () => {
+      data2.value = data2.age++;
     }
 
-    return{ name, age, handleclick, p};
+    return{handleclick1, handleclick2, data1, data2};
   },
   created(){},
   mounted(){}
