@@ -16,12 +16,6 @@ export default {
   },
   props: ["posts"],
   setup(props) {
-    
-    onMounted(() => console.log("mounted"));
-    onUnmounted(() => console.log("unmounted"));
-    onUpdated(() => console.log("updated"));
-
-
     return {};
   },
 };
