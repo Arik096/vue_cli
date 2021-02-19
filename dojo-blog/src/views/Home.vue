@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <router-link :to="{ name:'Home' }">
+      <h1>Home</h1>
+    </router-link>
+    
     <div v-if="error">{{ error }}</div>
     <div v-if="posts.length">
       <PostList :posts="posts" />

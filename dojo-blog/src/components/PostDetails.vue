@@ -1,4 +1,7 @@
 <template>
+<router-link :to="{ name:'Home' }">
+      <h1>Home</h1>
+    </router-link>
   <div v-if="error">{{error}}</div>
   <div v-if="post" class="post"> 
       <h1>{{post.title}}</h1>
